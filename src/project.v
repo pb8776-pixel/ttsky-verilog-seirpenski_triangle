@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_seirpenski_triangle (
+module seirpenski_triangle (
     input  wire clk,       // system clock
     input  wire rst_n,     // active-low reset
     output reg  [7:0] lfsr_out // 8-bit LFSR state (row of triangle)
