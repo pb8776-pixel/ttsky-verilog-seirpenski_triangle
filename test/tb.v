@@ -28,7 +28,7 @@ module tb ();
 `endif
 
   // Replace tt_um_example with your module name:
-  seirpenski_triangle (
+  tt_um_seirpenski_triangle user_project (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
