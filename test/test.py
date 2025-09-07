@@ -10,7 +10,7 @@ from cocotb.triggers import ClockCycles
 
 
 @cocotb.test()
-async def test_sierpinski_lfsr(dut):
+async def test_tt_um_seirpenski_triangle(dut):
     dut._log.info("Starting Sierpiński LFSR test")
 
     # Clock: 100 kHz (10 us period)
