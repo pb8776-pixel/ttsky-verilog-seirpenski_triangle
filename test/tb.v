@@ -28,7 +28,7 @@ module tb ();
 `endif
 
   // Replace tt_um_example with your module name:
-  tt_um_example user_project (
+  sierpinski_lfsr (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
@@ -45,5 +45,27 @@ module tb ();
       .clk    (clk),      // clock
       .rst_n  (rst_n)     // not reset
   );
+// Clock generation: 10ns period (100 MHz)
+  always #5 clk = ~clk;
 
+  initial begin
+    // Initialize signals
+    clk   = 0;
+    rst_n = 0;
+    ena   = 1;     // Enable the design
+    ui_in = 8'h00; // Unused inputs
+    uio_in = 8'h00;
+
+    // Apply reset
+    #20;
+    rst_n = 1;
+
+    // Run for 1000ns
+    repeat (100) begin
+      @(posedge clk);
+      $display("Time=%0t LFSR=%b", $time, uo_out);
+    end
+
+    $finish;
+  end
 endmodule
