@@ -28,7 +28,7 @@ module tb ();
 `endif
 
   // Replace tt_um_example with your module name:
-  sierpinski_lfsr (
+  tt_um_sierpinski_lfsr (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
